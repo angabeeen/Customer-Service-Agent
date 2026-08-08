@@ -42,11 +42,11 @@ db=Chroma(persist_directory=CHROMA_PATH, embedding_function=embeddings)
 
 
 
-from langchain_groq import ChatGroq
+from langchain_anthropic import ChatAnthropic
 
-llm = ChatGroq(
-    model="llama3-8b-8192",
-    api_key=os.getenv("GROQ_API_KEY"),
+llm = ChatAnthropic(
+    model="claude-haiku-4-5",
+    api_key=os.getenv("ANTHROPIC_API_KEY"),
     temperature=0
 )
 def get_response(query, chat_history):
