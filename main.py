@@ -23,11 +23,11 @@ class Query(BaseModel):
     message: str
     session_id: Optional[str] = None 
 
-@app.post("/chat")
+@app.post("/")
 
 
 
-async def chat(query: Query):
+async def root(query: Query):
     session_id=query.session_id or str(uuid.uuid4())
     if session_id not in chat_histories:
         
